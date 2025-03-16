@@ -9,3 +9,8 @@ We had to write a script which can determine based on your income and other fact
     Introduction to control flow in Python
     Formulating a computational solution to a problem
     Exploring bisection search
+## PSET 2
+I had to recreate the popular hangman game in Python. Read a list of words from a file, created helper functions and simulated a full hangman game against the computer. Implemented a hint functionality in the game as well which can give the user a letter of the word in exchange for more hints
+## Learning Outcomes -
+    Writing and calling functions in Python
+    Using loop mechanisms to repeat a computational process until a condition is reached
