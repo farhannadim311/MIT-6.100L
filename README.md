@@ -14,3 +14,9 @@ I had to recreate the popular hangman game in Python. Read a list of words from 
 ## Learning Outcomes -
     Writing and calling functions in Python
     Using loop mechanisms to repeat a computational process until a condition is reached
+## PSET 3
+I had to write a program that analyzes and compares two text files using word and letter frequency statistics. It calculates similarity scores, identifies the most frequent words, and computes TF-IDF values to evaluate word significance across multiple documents
+## Learning Outcomes - 
+    Using dictionaries to efficiently store, update and manage data
+    Exploring and understanding various data analytics approach such as TF-IDF
+    
