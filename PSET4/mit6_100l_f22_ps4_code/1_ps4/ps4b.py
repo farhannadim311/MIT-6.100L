@@ -1,7 +1,3 @@
-# Problem Set 4B
-# Name:
-# Collaborators:
-
 import random
 
 
@@ -192,8 +188,9 @@ class EncryptedMessage(Message):
 
         Returns: (PlaintextMessage) the decrypted message (containing the pad)
         '''
-        for i in range(len(pad)):
-            pad[i] = -pad[i]
-        message = self.apply_pad(pad)
-        return PlaintextMessage(message, pad)
+        pad_copy = pad.copy()
+        for i in range (len(pad)):
+            pad_copy[i] = -pad_copy[i]
         
+        message = self.apply_pad(pad_copy)
+        return PlaintextMessage(message, pad)
