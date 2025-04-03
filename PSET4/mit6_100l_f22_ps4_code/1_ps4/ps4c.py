@@ -1,4 +1,4 @@
-# Problem Set 4C
+## Problem Set 4C
 # Name:
 # Collaborators:
 
@@ -80,7 +80,31 @@ def decrypt_message_try_pads(ciphertext, pads):
 
     Returns: (PlaintextMessage) A message with the decrypted ciphertext and the best pad
     '''
-    raise NotImplementedError  # delete this line and replace with your code here
+    word_list = load_words("words.txt")
+    plaintext = []
+    valid_words = []
+    maximum = 0
+    maximum_index = 0
+    words = 0
+    for i in pads:
+        plaintext.append(ciphertext.decrypt_message(i))
+    for plain_message in plaintext:
+        message = plain_message.get_text()
+        message = message.split()
+        for word in message:
+            if (is_word(word_list, word) == True):
+                words  = words + 1
+        valid_words.append(words)
+        words = 0
+    for i in range(len(valid_words)):
+        if valid_words[i] >= maximum:
+            maximum = valid_words[i]
+            maximum_index = i
+    return plaintext[maximum_index]
+            
+                    
+            
+            
 
 
 def decode_story():
@@ -91,12 +115,17 @@ def decode_story():
     Returns: (string) the decoded story
 
     '''
-    raise NotImplementedError  # delete this line and replace with your code here
+    message = get_story_string()
+    pads = get_story_pads()
+    ciphertext = ps4b.EncryptedMessage(message)
+    decrypted_story = decrypt_message_try_pads(ciphertext, pads)
+    return decrypted_story.get_text()
+    
 
 
 
 if __name__ == '__main__':
     # # Uncomment these lines to try running decode_story()
-    # story = decode_story()
-    # print("Decoded story: ", story)
+    story = decode_story()
+    print("Decoded story: ", story)
     pass
